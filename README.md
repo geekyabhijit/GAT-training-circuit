@@ -1,4 +1,4 @@
-# Graph Attention Network (GAT) for Circuit Topology Classification
+# Graph Attention Network (GAT) for Circuit Topology Classification by Abhijit
 
 This repository contains an implementation of a Graph Attention Network (GAT) with multihead attention for analog circuit topology classification tasks.
 
@@ -118,6 +118,23 @@ python train_with_netlists.py
 
 See [README_NETLIST.md](README_NETLIST.md) for detailed information on using netlists.
 
+### Detecting Subcircuits in Complex Circuits
+
+Once you have a trained model, you can use it to detect subcircuit topologies within larger, more complex circuits:
+
+```bash
+python detect_subcircuits.py --netlist examples/complex_circuit.sp
+```
+
+This will:
+- Load your trained model
+- Process the complex circuit netlist
+- Identify potential subcircuits and their topologies
+- Generate a visualization showing the detected subcircuits
+- Output detailed information about each detected subcircuit
+
+See [README_SUBCIRCUIT.md](README_SUBCIRCUIT.md) for more details on subcircuit detection.
+
 ## Netlist Parser
 
 The repository includes a SPICE netlist parser (`netlist_to_graph.py`) that:
@@ -150,4 +167,5 @@ You can modify:
 - Netlist parser to support additional component types
 - Circuit topology characteristics in the synthetic data generator
 
-For real-world applications, replace the synthetic data with your actual circuit netlists. 
+For real-world applications, replace the synthetic data with your actual circuit netlists.
+
